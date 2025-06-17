@@ -1,11 +1,58 @@
- 	 I.	Summary  
-Due to the impact of the COVID-19 pandemic, remote work has become the preferred working condition. Many employers have found it challenging to transition back to in-person work. Remote work allows the benefits of diversity, inclusion, and financial savings. However, this may be at the cost of reinforcing gender norms and potential mental burnout of employees, especially for younger employees. Considering these factors, this paper focuses on determining 1) What factors affect employees' perceived productivity in remote working conditions? and 2) How do employers benefit from remote work systems? 
-The data originated from two surveys conducted by the authorities of New South Wales to understand remote workers' experiences during the COVID-19 pandemic. The first survey was held in August and September 2020, and the second in 2021. The datasets were combined based on similar questions, resulting in 29 columns. Perceived productivity was the output variable and was categorised into three class variables: low, same, and high. The input variables were a mix of numeric (i.e., percentage of remote work in 2020 and preferred remote work percentage in 2020) and categorical variables (i.e., gender and occupation description). The data was split into training (70%) and validation (30%) subsets. Any rows with missing values, columns deemed unnecessary, and individuals 67 years old or older were removed. Categorical variables were encoded to numbers, and any scaled responses were transformed into ordinal scales. Outliers were identified using the 3-standard-deviation rule and replaced with column medians. The final data, after transformation, contained 2,804 rows and 29 columns. 
-This study used random forests, feature importance analysis, and partial dependence plots to determine what factors influence employees' productivity when working remotely. Random forests were used to classify perceived productivity into the three output classes. When testing, the random forest obtained an accuracy of 60,69% on the validation set, 77,42% on the training set, a mean absolute error with a score of 0,52, and an ordinal accuracy of 83,39%. Attempts were made to solve the issue of the class imbalance seen within the random forest model. However, none of the other models or sampling techniques created better results. Feature importance was used to discover the top ten factors influencing productivity in remote work settings. Finally, partial dependence was conducted to better understand the connection certain factors had on productivity; this was done by isolating the relationship between one factor and productivity.  
-
-The final results for the top factors that influence productivity in a remote work setting in descending order are the following: employees with a strong preference for remote work, age of employees, the number of hours a day employees spend remote working, in-person commuting times, employees who found collaboration easier with remote work, employees who had experience with remote work during 2020, how many hours an employee can use with family or on domestic responsibilities. Deeper analysis found that an individual's occupation (i.e., Managerial or Technician) influenced their attitude towards remote work.  
-
-Overall, productivity rose with remote work for Managerial Positions, Corporate and Public Sector Professionals, and Sales Workers. It is suggested that for these occupations to improve productivity with virtual work further, employers should promote flexible work agreements, invest in tools that allow easier online collaboration, encourage work-life balance, aid employees in what barriers make remote work difficult, and provide tailored support for different age groups.  
-
-
-The entire report is present in the repository titled Future of Remote work Report
+The Future of Work: Analyzing Employee Productivity in a Remote World
+📊 An analysis of the factors influencing employee productivity and employer benefits in a remote work environment, based on survey data from the COVID-19 pandemic era.
+📌 Overview
+The COVID-19 pandemic catalyzed a global shift to remote work, presenting both opportunities and challenges for employers and employees. While remote work offers benefits like increased diversity, inclusion, and cost savings, it also raises concerns about reinforcing gender norms and potential employee burnout.
+This project investigates the dynamics of remote work by analyzing data from two surveys conducted by the New South Wales government in 2020 and 2021. Using a Random Forest model, we identify the key drivers of perceived productivity and provide data-driven recommendations for organizations navigating the future of work.
+🎯 Research Questions
+This study aims to answer two primary questions:
+What factors most significantly affect an employee's perceived productivity in a remote work setting?
+How do employers benefit from implementing remote work systems?
+💾 The Dataset
+The data for this project was sourced from two surveys conducted by the authorities of New South Wales to understand remote workers' experiences.
+Source: Two surveys from 2020 and 2021.
+Target Variable: Perceived Productivity (Categorical: Low, Same, High).
+Features: A mix of numeric (e.g., preferred remote work %) and categorical (e.g., occupation) variables.
+Final Size: After preprocessing, the dataset contains 2,804 samples and 29 features.
+⚙️ Methodology
+The analysis followed a structured data science workflow:
+1. Data Preprocessing
+Data Combination: Questions from both surveys were merged.
+Data Cleaning:
+Rows with missing values were removed.
+Unnecessary columns were dropped.
+Respondents aged 67 or older were excluded.
+Feature Engineering:
+Categorical variables were numerically encoded.
+Scaled responses were transformed into ordinal scales.
+Outlier Handling: Outliers identified using the 3-standard-deviation rule were replaced with the column median.
+Data Splitting: The data was split into a 70% training set and a 30% validation set.
+2. Modeling and Analysis
+Classification Model: A Random Forest Classifier was trained to predict the three classes of Perceived Productivity.
+Feature Importance: The model's feature importance scores were extracted to identify the most influential factors.
+Partial Dependence Plots (PDP): PDPs were used to isolate and visualize the relationship between the top features and productivity.
+📈 Model Performance
+The Random Forest model achieved the following results on the validation set:
+Metric	Score
+Accuracy	60.69%
+Ordinal Accuracy	83.39%
+Mean Absolute Error	0.52
+Training Accuracy	77.42%
+Note: While a class imbalance was identified, alternative models and sampling techniques did not yield superior results.
+💡 Key Findings: Top Factors Influencing Productivity
+The feature importance analysis revealed the top factors that influence an employee's perceived productivity when working remotely, in descending order of importance:
+Strong Preference for Remote Work: Employees who want to work remotely are more productive.
+Age: The age of the employee plays a significant role.
+Daily Remote Work Hours: The number of hours spent working remotely per day.
+In-Person Commute Time: Longer commute times saved correlated with higher productivity.
+Ease of Collaboration: Employees who found online collaboration easy were more productive.
+Prior Remote Work Experience: Experience with remote work during 2020 was a key factor.
+Time Gained for Personal Life: Hours saved that could be used for family or domestic duties.
+Occupation Type: Roles like "Managerial" or "Technician" showed different attitudes and productivity outcomes.
+Deeper analysis showed that productivity particularly rose for Managerial Positions, Corporate and Public Sector Professionals, and Sales Workers.
+🚀 Recommendations for Employers
+To enhance productivity and leverage the benefits of remote work, employers should:
+Promote Flexible Work Agreements: Allow employees to choose work arrangements that suit them best.
+Invest in Collaboration Tools: Provide technology that makes virtual teamwork seamless and effective.
+Encourage Work-Life Balance: Actively support employees in disconnecting and managing their time.
+Address Remote Work Barriers: Identify and help employees overcome individual challenges with remote work.
+Provide Tailored Support: Recognize that different demographics (especially age groups) may require different types of support to thrive.
